@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="pt_br" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="/estilo.css" >
+        <title>Extrato</title>
+    </head>
+<html>
+    <div>
+        <form action="#" th:action="@{/caixa/salvar}" th:object="${extrato}" method="POST">
+
+            <label class="lead">Data Início</label>
+            <input type="date" th:field="*{dataInicialFormatada}" class="form-control mb-4 w-25" >
+            <label class="lead">Data Final</label>
+            <input type="date" th:field="*{dataFinalFormatada}" class="form-control mb-4 w-25" >
+
+            <button type="submit" title="Mostrar o Extrato" ><i class="bi bi-save2"></i></button>
+            <button type="submit"><a th:href="@{/caixa/}"  title="Cancelar"><i class="bi bi-arrow-return-left"></i></a></button>
+        </form>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

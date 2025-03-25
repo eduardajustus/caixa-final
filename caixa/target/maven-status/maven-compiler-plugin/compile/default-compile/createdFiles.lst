@@ -1,0 +1,7 @@
+com/info/caixa/repository/SaldoRepository.class
+com/info/caixa/model/Extrato.class
+com/info/caixa/model/Saldo.class
+com/info/caixa/controller/CaixaController.class
+com/info/caixa/CaixaApplication.class
+com/info/caixa/repository/MovimentoRepository.class
+com/info/caixa/model/Movimento.class

@@ -1,0 +1,7 @@
+/home/info20242/NetBeansProjects/caixa/src/main/java/com/info/caixa/CaixaApplication.java
+/home/info20242/NetBeansProjects/caixa/src/main/java/com/info/caixa/controller/CaixaController.java
+/home/info20242/NetBeansProjects/caixa/src/main/java/com/info/caixa/model/Extrato.java
+/home/info20242/NetBeansProjects/caixa/src/main/java/com/info/caixa/model/Movimento.java
+/home/info20242/NetBeansProjects/caixa/src/main/java/com/info/caixa/model/Saldo.java
+/home/info20242/NetBeansProjects/caixa/src/main/java/com/info/caixa/repository/MovimentoRepository.java
+/home/info20242/NetBeansProjects/caixa/src/main/java/com/info/caixa/repository/SaldoRepository.java
