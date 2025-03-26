@@ -64,3 +64,6 @@ a :visited {
    color: black; 
 }
 
+.form-control{
+    display:inline-block;
+}
