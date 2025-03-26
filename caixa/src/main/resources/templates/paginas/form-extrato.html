@@ -14,16 +14,34 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>Extrato</title>
     </head>
 <html>
-    <div>
+     <div>
         <form action="#" th:action="@{/caixa/salvar}" th:object="${extrato}" method="POST">
+            <div class="data">
+                <label class="lead">Data Início</label>
+                <input type="date" th:field="*{dataInicialFormatada}" class="form-control mb-4 w-25" >
+                    <ul></ul>
+                <label class="lead">Data Final</label>
+                <input type="date" th:field="*{dataFinalFormatada}" class="form-control mb-4 w-25" >
+            </div>
 
-            <label class="lead">Data Início</label>
-            <input type="date" th:field="*{dataInicialFormatada}" class="form-control mb-4 w-25" >
-            <label class="lead">Data Final</label>
-            <input type="date" th:field="*{dataFinalFormatada}" class="form-control mb-4 w-25" >
-
-            <button type="submit" title="Mostrar o Extrato" ><i class="bi bi-save2"></i></button>
-            <button type="submit"><a th:href="@{/caixa/}"  title="Cancelar"><i class="bi bi-arrow-return-left"></i></a></button>
+            <button type="submit" title="Mostrar o Extrato" >Mostrar</button>
+            <button type="submit"><a th:href="@{/caixa/}"  title="Cancelar">Cancelar</button>
+            <ul></ul>
+            <ul>
+            <ul>
+            <caption>Extrato das Datas</caption>
+            <table class="table" border="1">
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>tipo</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </table>
+            </ul>
+            </ul>
         </form>
 
     </div>
