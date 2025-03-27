@@ -22,7 +22,7 @@ public class CaixaController {
     private MovimentoRepository movimentoRepository;
     @Autowired
     private SaldoRepository saldoRepository;
-    List<Movimento> listaCaixa;
+    List<Movimento> listaMovimento;
     
     //mostra tela inicial
     @GetMapping("/")
@@ -63,15 +63,35 @@ public class CaixaController {
         return "redirect:/caixa/";
     }
     
-    //mostra extrato e a lista
+    //saldos das datas selicionadas
+    //selecionado as datas tem que pegar os extratos dessas datas 
+    //saldo anterior, movimentos e os saldos dos ultimos dias
+    
     @PostMapping("/saldos")
-    public String Saldos(){
-   //     listaCaixa= movimentoRepository.findExtrato(extrato.getDataInicial(), extrato.getDataFinal());
-  //      model.addAttribute("listacaixa",listaCaixa);
+    public String listaMovimento()){
+        //saldo anterior
+         saldoRepository.findSaldoPrevious(movimento.getData());
+        
+        movimentoSaldoAnterior.setData(saldoAnterior.getData);
+        movimentoSaldoAnterior.setDescricao(saldoAnterior.getDescricao);
+        movimentoSaldoAnterior.setValor(saldoAnterior.getValor);
+        
+        //saldo final
+         saldoRepository.findSaldoFinsh(movimento.getData());
+        movimentoSaldoAnterior.setData(saldoAnterior.getData);
+        movimentoSaldoAnterior.setDescricao(saldoAnterior.getDescricao);
+        movimentoSaldoAnterior.setValor(saldoAnterior.getValor);
+         
+        //movimentos 
+        movimentoSaldoFinal
+        listaMovimento.add(movimentoSaldoAnterior);
+        listaMovimento.addAll(movimentoRepository.findExtrato(extrato.getDataInicial(), extrato.getDataFinal()));
+        listaMovimento.add(movimentoSaldoFinal);
+        
         return "paginas/lista-caixa";
     }     
     
-    @GetMapping("/extrato")
+    @GetMapping("/extrato") //mostrar a tela extrato
     public String Extrato(@ModelAttribute("extrato")Extrato extrato,Model model){
         extrato = new Extrato();
         model.addAttribute("extrato",extrato);
