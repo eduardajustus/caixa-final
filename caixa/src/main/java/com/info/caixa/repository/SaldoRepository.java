@@ -17,8 +17,13 @@ import org.springframework.data.repository.query.Param;
 @Repository
 public interface SaldoRepository  extends JpaRepository<Saldo, Integer>{
     Optional<Saldo> findByData(Date data);
+    //data inicial
     @Query("select s from Saldo s where s.data<:data order by s.data")
     List<Saldo> findSaldoPrevious(@Param("data") Date data);
+    //data final
+    @Query("select s from Saldo s where s.data<=:data order by s.data")
+    List<Saldo> findSaldoFinsh(@Param("data") Date data);
+    
     @Transactional
     @Modifying
     @Query("update Saldo s set s.valor=s.valor+:vm where s.data>=:data")
